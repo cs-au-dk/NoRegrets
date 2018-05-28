@@ -1,0 +1,41 @@
+#### joe made this: http://goel.io/joe
+
+.idea
+**/.DS_Store
+solver/
+test-worker/
+local-worker/
+node-dump/
+out/
+web/data
+api-inference/package.json
+build-sub/
+**/*.iml
+
+#####=== Scala ===#####
+
+*.class
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+executable/
+yarn.lock
+container-cache/
+log.log
+
+### CACHE IS IGNORED BY NOW #######
+
+caching/**

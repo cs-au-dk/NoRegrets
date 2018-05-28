@@ -1,0 +1,17 @@
+<h3>List observations</h3>
+
+<div class="observation" *ngIf="(tracingResult | async)?.toString() === 'LearningFailure'">
+  {{(tracingResult | async)?.msg}}
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let obs of (tracingResult | async)?.observations">
+      <div>
+        <a (onclick)="toggle('ss_' + getId(obs))">{{obs}}:</a>
+        <!-- make collaplable -->
+        <div id="ss_{{getId(obs)}}" [innerHtml]="prettyStackTrace(obs)"></div>
+      </div>
+    </li>
+  </ul>
+</div>

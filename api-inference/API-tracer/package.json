@@ -1,0 +1,38 @@
+{
+  "name": "api-tracer",
+  "version": "1.0.0",
+  "description": "Extract API by use of dependents test",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --compilers ts:ts-node/register,tsx:ts-node/register",
+    "install": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@casadev.cs.au.dk:torp/Test-distiller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chai": "^3.5.2",
+    "@types/lodash": "^4.14.74",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.12",
+    "@types/rimraf": "^2.0.2",
+    "@types/winston": "^2.3.5",
+    "commander": "^2.11.0",
+    "debug-fd-deprecated": "^1.0.1",
+    "lodash": "4.17.4",
+    "longjohn": "0.2.12",
+    "rimraf": "2.6.2",
+    "source-map-support": "^0.4.17",
+    "typescript-collections": "1.2.5",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.5.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  }
+}

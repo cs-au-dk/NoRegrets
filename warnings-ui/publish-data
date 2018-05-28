@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	TAG=""
+else
+	TAG="$1/"
+	echo "Using tag $TAG"
+fi
+
+
+rsync -avz -e "ssh -p 10022" --exclude 'cloned-repo*' ../caching casadev:/data/distilled_website/public_html/$TAG
+

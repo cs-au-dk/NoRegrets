@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -ex
+
+if [ -z "$1" ]; then
+	TAG=""
+else
+	TAG="$1/"
+	echo "Using tag $TAG"
+fi
+
+yarn install && yarn build
+
+ssh -p 10022 casadev mkdir -p /data/distilled_website/public_html/$TAG
+rsync -avz -e "ssh -p 10022" dist/ casadev:/data/distilled_website/public_html/$TAG
+rsync -avz -e "ssh -p 10022" node_modules casadev:/data/distilled_website/public_html/$TAG

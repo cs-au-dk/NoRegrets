@@ -1,0 +1,11 @@
+textarea {
+  width: 100%;
+  height: 800px;
+}
+
+pre {
+  margin: 0;
+  font-family: monaco, "Courier New", Courier, monospace;
+  line-height: 1.3;
+  background: black;
+}
