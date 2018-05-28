@@ -1,6 +1,8 @@
 # NoRegrets Breaking Change detecting tool for NPM.
 This repository contains the implementation of the NoRegrets tool as described in the 2018 ECOOP paper *Type Regression Testing to Detect Breaking Changes in Node.js Libraries* (Link will follow later)
 
+The data from the experimental evaluation is available [here](http://www.brics.dk/noregrets/NoRegretsUI/).
+
 Documentation-of how to use the tool can be found [here](guide/index.html). Note, this documentation assumes that a registry is already hosted and that NoRegrets is configured to use this registry. For more information, see [Setting up the registry](#setting-up-the-registry). 
 
 ## Dependencies
