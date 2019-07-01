@@ -1,2 +1,0 @@
-caching/*.bin filter=lfs diff=lfs merge=lfs -text
-caching/*.log filter=lfs diff=lfs merge=lfs -text

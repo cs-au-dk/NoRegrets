@@ -11,6 +11,9 @@ web/data
 api-inference/package.json
 build-sub/
 **/*.iml
+api-inference/**/*.js
+warnings-ui/**/*.js
+benchmarks/
 
 #####=== Scala ===#####
 

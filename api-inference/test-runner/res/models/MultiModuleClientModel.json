@@ -1,0 +1,78 @@
+{
+  "jsonClass":"APIModel",
+  "observations":[
+    {
+      "jsonClass": "ReadObservation",
+      "path":[
+        {
+          "jsonClass":"RequireLabel",
+          "name":"lib"
+        }
+      ],
+      "type":"object",
+      "stack":"Example stack",
+      "propertyTypes":{
+
+      },
+      "id":0
+    },
+    {
+      "jsonClass": "ReadObservation",
+      "path":[
+        {
+          "jsonClass":"RequireLabel",
+          "name":"lib"
+        },
+        {
+          "jsonClass":"PropertyLabel",
+          "name":"a"
+        }
+      ],
+      "type":"string",
+      "value": "foo",
+      "stack":"Example stack",
+      "propertyTypes":{
+
+      },
+      "id":1
+    },
+    {
+      "jsonClass": "ReadObservation",
+      "path":[
+        {
+          "jsonClass":"RequireLabel",
+          "name":"otherLib"
+        }
+      ],
+      "type":"object",
+      "stack":"Example stack",
+      "propertyTypes":{
+
+      },
+      "id":2
+    },
+    {
+      "jsonClass": "ReadObservation",
+      "path":[
+        {
+          "jsonClass":"RequireLabel",
+          "name":"otherLib"
+        },
+        {
+          "jsonClass":"PropertyLabel",
+          "name":"a"
+        }
+      ],
+      "type":"number",
+      "value": 42,
+      "stack":"Example stack",
+      "propertyTypes":{
+
+      },
+      "id":3
+    }
+  ],
+  "unifications":[
+
+  ]
+}

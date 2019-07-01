@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -ex
+
+if [ "$PREBUILT" = "YES" ]; then
+	echo "Skipping built, PREBUILT enviroment variable is set"
+else
+	sbt -batch "project backend" assembly > /dev/null
+fi
+
+export JAVA_OPTS="-Xmx13G -Xss1G"
+java $JAVA_OPTS -cp backend/target/scala-2.11/backend-assembly-latest.jar backend.server.Cmd "$@"
+
+#export SBT_OPTS="-Xmx13G -Xss1G"
+#sbt -batch "project distilledtests-server" "runMain distilling.server.Cmd $*"

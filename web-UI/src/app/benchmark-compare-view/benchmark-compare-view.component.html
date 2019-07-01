@@ -1,0 +1,40 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th> Client </th>
+        <th> First select {{firstToolName$ | async}} </th>
+        <th> Second select {{secondToolName$ | async}} </th>
+        <th> Speed up ratio (slowest/fastest) </th>
+    </tr>
+    </thead>
+    <tr *ngFor="let sharedClient of (zippedSharedClients$ | async)">
+        <td>
+            {{sharedClient[0].packageAtVersion}}
+        </td>
+        <td>
+            {{sharedClient[0].executionTimeMillis}} ms
+        </td>
+        <td>
+            {{sharedClient[1].executionTimeMillis}} ms
+        </td>
+        <th>
+            {{speedRatioCD(sharedClient[0], sharedClient[1])}} x
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <b>Mean</b>
+        </td>
+        <td>
+            <b>{{(meanTime(0) | async).toFixed(2)}} ms</b>
+        </td>
+        <td>
+            <b>{{(meanTime(1) | async).toFixed(2)}} ms</b>
+        </td>
+        <td>
+            <b>
+                {{(totalSpeedRatio() | async) }} x
+            </b>
+        </td>
+    </tr>
+</table>

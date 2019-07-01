@@ -197,7 +197,7 @@ program.parse(process.argv);
 
 // infinite stack traces
 
-Error.stackTraceLimit = Infinity; 
+Error.stackTraceLimit = Infinity; // TODO: config
 
 // reporter options
 

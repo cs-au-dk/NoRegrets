@@ -1,45 +1,69 @@
-
 import {AccessPath, Label} from "./paths";
-import {CustomProxyHandler} from "./regression-runtime-checker";
+import {NoRegretsProxyHandler} from "./regression-runtime-checker";
+import {option, Option, some, none} from "ts-option";
+import {SideEffects} from "./observations";
 
 export interface ProxyEventHandler {
 
     handleHas(
-        proxyHandler: CustomProxyHandler,
+        proxyHandler: NoRegretsProxyHandler,
         property: PropertyKey,
-        has: boolean
+        has: boolean,
+        valueOriginPath: Option<AccessPath>
     )
 
     handleWrite(
-        target: CustomProxyHandler,
         writtenValue: any,
-        writeToPath: AccessPath
+        writeToPath: AccessPath,
+        valueOriginPath: Option<AccessPath>,
+        isKnown: boolean
     )
 
     handleRead(
-        target: CustomProxyHandler,
+        targetPath: AccessPath,
         originalLookedUpValue: any,
-        readLookedUpPath: AccessPath
+        readPath: AccessPath,
+        valueOriginPath: Option<AccessPath>,
+        isKnown: boolean,
+        didThrow: boolean
     )
+
+    handleArgumentRead(
+      funcPath: AccessPath,
+      argument: any,
+      argumentOriginPath: Option<AccessPath>,
+      argPath: AccessPath,
+      isKnown: boolean
+    )
+
 
     handleCall(
-        target: CustomProxyHandler,
         argArray: any[],
         functionResult: any,
-        callPath: AccessPath
+        didThrow: boolean,
+        callPath: AccessPath,
+        valueOriginPath: Option<AccessPath>,
+        isKnown: boolean
     )
 
-    handleGetPrototype(target: CustomProxyHandler,
+    handleGetPrototype(targetPath: AccessPath,
                        originalLookedUpValue: any,
-                       readLookedUpPath: AccessPath
+                       readLookedUpPath: AccessPath,
+                       isKnown: boolean
     )
 
-    makeAccessPath(issuer: CustomProxyHandler, p: PropertyKey): AccessPath
+    forceReadPrototypes(initPath: AccessPath, target: {})
+
+    makeAccessPath(issuer: NoRegretsProxyHandler, p: PropertyKey, protoCount: number): AccessPath
+
+    makeWritePath(issuer: NoRegretsProxyHandler, p: PropertyKey, protoCount: number): AccessPath
 
     makeArgPath(path: AccessPath, count: number): AccessPath
 
-    makeCallPath(issuer: CustomProxyHandler, argNum: number): AccessPath
+    makeCallPath(issuer: NoRegretsProxyHandler, argNum: number): AccessPath
 
-    makeConstructorPath(issuer: CustomProxyHandler, argNum: number): AccessPath
+    makeConstructorPath(issuer: NoRegretsProxyHandler, argNum: number): AccessPath
+
+    makeReceiverPath(appPath: AccessPath): AccessPath
 }
 

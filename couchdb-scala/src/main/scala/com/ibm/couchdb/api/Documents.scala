@@ -39,9 +39,8 @@ class Documents(client: Client, db: String, typeMapping: TypeMapping) {
   }
 
   def create[D: W](
-    obj: D,
-    id: String,
-    attachments: Map[String, CouchAttachment] = Map.empty): Task[Res.DocOk] = {
+      obj: D, id: String,
+      attachments: Map[String, CouchAttachment] = Map.empty): Task[Res.DocOk] = {
     typeMapping.get(obj.getClass) match {
       case Some(t) =>
         client.put[CouchDoc[D], Res.DocOk](
@@ -50,19 +49,15 @@ class Documents(client: Client, db: String, typeMapping: TypeMapping) {
           CouchDoc[D](obj, t.name, _attachments = attachments))
       case None =>
         val cl = obj.getClass.getCanonicalName
-        Res
-          .Error(
-            "cannot_create",
-            "No type mapping for " + cl + " available: " + typeMapping)
-          .toTask
+        Res.Error(
+          "cannot_create", "No type mapping for " + cl + " available: " + typeMapping).toTask
     }
   }
 
   private def postBulk[D: W](objs: Seq[CouchDoc[D]]): Task[Seq[Res.DocOk]] = {
     client.post[Req.Docs[D], Seq[Res.DocOk]](
       s"/$db/_bulk_docs",
-      Status.Created,
-      Req.Docs(objs))
+      Status.Created, Req.Docs(objs))
   }
 
   def createMany[D: W](objs: Map[String, D]): Task[Seq[Res.DocOk]] = create(objs.toSeq)
@@ -70,18 +65,16 @@ class Documents(client: Client, db: String, typeMapping: TypeMapping) {
   def createMany[D: W](objs: Seq[D]): Task[Seq[Res.DocOk]] = create(objs.map(("", _)))
 
   private def create[D: W, S](objs: Seq[(String, D)]): Task[Seq[Res.DocOk]] = {
-    objs.find { x =>
-      !typeMapping.contains(x._2.getClass)
-    } match {
+    objs.find { x => !typeMapping.contains(x._2.getClass) } match {
       case Some(missing) =>
         Res.Error("cannot_create", "No type mapping for " + missing).toTask
       case None =>
-        postBulk(objs.map { o =>
-          CouchDoc[D](
+        postBulk(
+          objs.map { o => CouchDoc[D](
             _id = o._1,
             doc = o._2,
             kind = typeMapping.get(o._2.getClass).fold("")(_.name))
-        })
+          })
     }
   }
 
@@ -90,9 +83,7 @@ class Documents(client: Client, db: String, typeMapping: TypeMapping) {
     objs.find(invalidDoc) match {
       case Some(doc) =>
         val missingField = if (doc._id.isEmpty) "an ID" else "a REV number"
-        Res
-          .Error("cannot_update", s"One or more documents do not contain $missingField.")
-          .toTask
+        Res.Error("cannot_update", s"One or more documents do not contain $missingField.").toTask
       case None => postBulk(objs)
     }
   }
@@ -118,21 +109,27 @@ class Documents(client: Client, db: String, typeMapping: TypeMapping) {
     if (obj._id.isEmpty)
       Res.Error("cannot_update", "Document ID must not be empty").toTask
     else
-      client.put[CouchDoc[D], Res.DocOk](s"/$db/${obj._id}", Status.Created, obj)
+      client.put[CouchDoc[D], Res.DocOk](
+        s"/$db/${obj._id}",
+        Status.Created,
+        obj)
   }
 
   def delete[D](obj: CouchDoc[D]): Task[Res.DocOk] = {
     if (obj._id.isEmpty)
       Res.Error("cannot_delete", "Document ID must not be empty").toTask
     else {
-      client.delete[Res.DocOk](s"/$db/${obj._id}?rev=${obj._rev}", Status.Ok)
+      client.delete[Res.DocOk](
+        s"/$db/${obj._id}?rev=${obj._rev}",
+        Status.Ok)
     }
   }
 
-  def attach[D](obj: CouchDoc[D],
-                name: String,
-                data: Array[Byte],
-                contentType: String = ""): Task[Res.DocOk] = {
+  def attach[D](
+      obj: CouchDoc[D],
+      name: String,
+      data: Array[Byte],
+      contentType: String = ""): Task[Res.DocOk] = {
     if (obj._id.isEmpty)
       Res.Error("cannot_attach", "Document ID must not be empty").toTask
     else {
@@ -145,8 +142,8 @@ class Documents(client: Client, db: String, typeMapping: TypeMapping) {
   }
 
   def attach[D](obj: CouchDoc[D], name: String, path: String): Task[Res.DocOk] = {
-    readFile(path) flatMap { attachment =>
-      attach(obj, name, attachment)
+    readFile(path) flatMap {
+      attachment => attach(obj, name, attachment)
     }
   }
 
@@ -171,10 +168,13 @@ class Documents(client: Client, db: String, typeMapping: TypeMapping) {
     else if (name.isEmpty)
       Res.Error("cannot_delete", "The attachment name is empty").toTask
     else
-      client.delete[Res.DocOk](s"/$db/${obj._id}/$name?rev=${obj._rev}", Status.Ok)
+      client.delete[Res.DocOk](
+        s"/$db/${obj._id}/$name?rev=${obj._rev}",
+        Status.Ok)
   }
 
   private def readFile(path: String): Task[Array[Byte]] = Task {
+    // TODO: replace with scodec / scalaz-stream / scodec-stream?
     Files.readAllBytes(Paths.get(path))
   }
 }

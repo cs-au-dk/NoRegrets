@@ -117,32 +117,3 @@ object ServerDocker {
   dockerExposedPorts := Seq(9000, 9443)
   //dockerExposedVolumes := Seq("/opt/docker/logs")
 }
-
-object WorkerDocker {
-  val settings = Seq(
-    mappings in Universal ++= contentOf("./docker"), // Include ssh keys into the distribution
-    dockerBaseImage := "airdock/oracle-jdk:jdk-1.8",
-    dockerRepository := Some("localhost:5000"),
-    packageName in Docker := name.value + "-docker",
-    dockerUpdateLatest := true,
-    //version in Docker := "latest",
-    defaultLinuxInstallLocation in Docker := s"/opt/${name.value}",
-    dockerCommands := Seq(dockerCommands.value.head) ++ CustomDockerImage.dockerfile ++ dockerCommands.value.tail)
-}
-
-object NoServer {
-  val settings = Seq(
-    javaOptions ++= Seq("-server", "-Xmx52G", "-Xss515m", "-XX:+UseG1GC"))
-}
-
-object BenchmarksDocker {
-  val settings = Seq(
-    dockerBaseImage := "airdock/oracle-jdk:jdk-1.8",
-    dockerRepository := Some("benchmarks_docker"),
-    packageName in Docker := name.value + "-docker",
-    dockerUpdateLatest := true,
-    //version in Docker := "latest",
-    defaultLinuxInstallLocation in Docker := s"/opt/${name.value}",
-    dockerCommands := Seq(dockerCommands.value.head) ++ CustomDockerImage.dockerfile //++ dockerCommands.value.tail
-  )
-}

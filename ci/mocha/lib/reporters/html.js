@@ -199,6 +199,7 @@ function HTML (runner) {
   }
 
   function updateStats () {
+    // TODO: add to stats
     var percent = stats.tests / runner.total * 100 | 0;
     if (progress) {
       progress.update(percent).draw(ctx);

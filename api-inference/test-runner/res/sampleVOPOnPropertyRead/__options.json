@@ -1,0 +1,13 @@
+
+        {
+            "blacklistSideEffects": true,
+            "collectOwnProperties": false,
+            "collectStackTraces": true,
+            "detailedStackTraces": false,
+            "enableUnifications": false,
+            "libraryModuleName": "lib",
+            "output": "/home/torp/development/type-regression/api-inference/test-runner/res/sampleVOPOnPropertyRead/model.json",
+            "regressionInfo": null,
+            "testDistillationMode": true,
+            "withUnifications": false
+        }

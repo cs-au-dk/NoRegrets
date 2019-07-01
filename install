@@ -1,0 +1,13 @@
+#!/bin/bash
+set -o xtrace
+git submodule update --init --recursive
+npm install -g diff2html-cli
+npm install -g chai
+npm install -g typescript@3.4.5
+(cd node-process-wrapper && npm install && tsc)
+(cd api-inference/API-tracer && npm install)
+(cd api-inference/test-runner && npm install)
+(cd api-inference/API-tracer && tsc)
+(cd api-inference/test-runner && tsc)
+(cd web-UI && npm install)
+(cd ci/mocha && npm install)

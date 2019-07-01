@@ -1,0 +1,183 @@
+{
+    "jsonClass": "APIModel",
+    "observations": [
+        {
+            "didThrow": false,
+            "id": 1,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "function"
+        },
+        {
+            "didThrow": false,
+            "id": 3,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 2,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "object"
+        },
+        {
+            "didThrow": false,
+            "id": 4,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 2,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 1,
+                    "jsonClass": "ArgLabel"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "object"
+        },
+        {
+            "didThrow": false,
+            "id": 5,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 2,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "a"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "number",
+            "value": 42
+        },
+        {
+            "didThrow": false,
+            "id": 6,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 2,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 1,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "a"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "__NON-EXISTING__",
+            "value": "__NON-EXISTING__"
+        },
+        {
+            "didThrow": false,
+            "id": 7,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 2,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "length"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "__NON-EXISTING__",
+            "value": "__NON-EXISTING__"
+        },
+        {
+            "didThrow": false,
+            "id": 8,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 2,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                }
+            ],
+            "propertyTypes": {},
+            "type": "undefined",
+            "value": "__UNDEFINED__"
+        }
+    ],
+    "unifications": []
+}

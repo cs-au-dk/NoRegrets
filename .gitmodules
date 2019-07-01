@@ -1,0 +1,4 @@
+[submodule "node-process-wrapper"]
+	path = node-process-wrapper
+	url = https://github.com/mtorp/node-process-wrapper.git
+	branch = master

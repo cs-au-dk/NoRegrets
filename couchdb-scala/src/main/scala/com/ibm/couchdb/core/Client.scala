@@ -57,7 +57,7 @@ class Client(config: Config) {
   def req(request: Request, expectedStatus: Status): Task[Response] = {
     log.debug(s"Making a request $request")
     client.toHttpService.run(request) flatMap { mresponse =>
-      val response = mresponse.asInstanceOf[Response]
+      val response = mresponse
       log.debug(s"Received response $response")
       if (response.status == expectedStatus) {
         Task.now(response)

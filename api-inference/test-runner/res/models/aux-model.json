@@ -1,0 +1,22 @@
+{
+  "jsonClass":"APIModel",
+  "observations":[
+    {
+      "jsonClass": "ReadObservation",
+      "path": [
+        {
+          "jsonClass": "RequireLabel",
+          "name": "doNotLoadMeLibrary"
+        }
+      ],
+      "type": "[object]",
+      "stack": "Example stack",
+      "propertyTypes": {
+      },
+      "id": 0
+    }
+  ],
+  "unifications":[
+
+  ]
+}

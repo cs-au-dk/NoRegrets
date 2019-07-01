@@ -1,0 +1,15 @@
+{
+  "server": {
+    "baseDir": "dist",
+    "routes": {
+      "/node_modules": "node_modules",
+      "/caching": "../caching",
+      "/backend": "../backend",
+      "/api-inference": "../api-inference",
+      "/README.md": "README.md",
+      "/papers": "papers/"
+    },
+    "open": false
+  },
+  "ghostMode": false
+}

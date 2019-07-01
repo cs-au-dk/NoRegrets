@@ -1,29 +1,31 @@
-# NoRegrets Breaking Change detecting tool for NPM.
-This repository contains the implementation of the NoRegrets tool as described in the 2018 ECOOP paper *Type Regression Testing to Detect Breaking Changes in Node.js Libraries* (Link will follow later)
+## NoRegrets
+This repository contains the NoRegrets (Node.js Type Regression Tester) and NoRegrets+ tools
+for detecting breaking changes in Node.js library updates, as described in the
+2018 ECOOP [_Type Regression Testing to Detect Breaking Changes in Node.js Libraries_](https://cs.au.dk/~amoeller/papers/noregrets/paper.pdf) and
+2019 FSE _Model-Based Testing of Breaking Changes in Node.js Libraries_ (Link
+will follow later).  See [web-UI](web-UI/README.md) for a detailed description of NoRegrets.
 
-The data from the experimental evaluation is available [here](http://www.brics.dk/noregrets/NoRegretsUI/).
+## Installation
+Dependencies
+ - Linux or Mac
+ - Java 8 or newer (openJDK will not work)
+ - Scala Build Tool (SBT) v1.0.3 or newer
+ - Node.js (Tested with Node v8.10.0)
+ - npm (tested with npm 5.5.1)
 
-Documentation-of how to use the tool can be found [here](guide/index.html). Note, this documentation assumes that a registry is already hosted and that NoRegrets is configured to use this registry. For more information, see [Setting up the registry](#setting-up-the-registry). 
+Run `install.sh` to install the remaining dependencies.
 
-## Dependencies
-The following dependencies must be installed.
-- sbt 1.0.3
-- yarn 
-- npm
-- node v8.9.4
+## License
+Copyright 2019 casa.au.dk
 
-Moreover, the following script must be run
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-```
-$ ./install.sh
-```
+    http://www.apache.org/licenses/LICENSE-2.0
 
-## Setting up the registry
-NoRegerts relies on CouchDB database containing the NPM registry.
-The NPM registry contains metadata for each package on the NPM system, roughly corresponding to the information available in the [package.json](https://docs.npmjs.com/files/package.json) files.
-This information is needed for NoRegrets to compute, for example, a package's dependents.
-
-Use [this guide](https://github.com/npm/npm-registry-couchapp) to install CouchDB and download the NPM registry.
-Once the installation is done, edit the registry-servers entry in [server/src/main/resources/application.conf](server/src/main/resources/application.conf) to match the CouchDB installation .
-
-
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

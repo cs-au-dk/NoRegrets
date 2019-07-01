@@ -1,0 +1,68 @@
+{
+  "jsonClass":"APIModel",
+  "observations":[
+    {
+      "jsonClass": "ReadObservation",
+      "path": [
+        {
+          "jsonClass": "RequireLabel",
+          "name": "lib"
+        }
+      ],
+      "type": "function",
+      "stack": "Example stack",
+      "propertyTypes": {
+      },
+      "id": 0
+    },
+    {
+      "jsonClass": "ReadObservation",
+      "path": [
+        {
+          "jsonClass": "RequireLabel",
+          "name": "lib"
+        },
+        {
+          "jsonClass": "ApplicationLabel",
+          "numArgs": 0,
+          "constructorCall": false,
+          "identifier": 0
+        }
+      ],
+      "type": "boolean",
+      "value": true,
+      "stack": "Example stack",
+      "propertyTypes": {
+      },
+      "id": 1
+    },
+    {
+      "jsonClass": "ReadObservation",
+      "path": [
+        {
+          "jsonClass": "RequireLabel",
+          "name": "lib"
+        },
+        {
+          "jsonClass": "ApplicationLabel",
+          "numArgs": 0,
+          "constructorCall": false,
+          "identifier": 0
+        },
+        {
+          "jsonClass": "PropertyLabel",
+          "name": "this"
+        }
+      ],
+      "type": "__UNDEFINED__",
+      "value": "__UNDEFINED__",
+      "stack": "Example stack",
+      "propertyTypes": {
+      },
+      "id": 2
+    }
+  ],
+  "unifications":[
+
+  ]
+}

@@ -1,0 +1,147 @@
+{
+    "jsonClass": "APIModel",
+    "observations": [
+        {
+          "jsonClass": "ReadObservation",
+            "id": 1,
+            "isKnownValue": false,
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                }
+            ],
+            "propertyTypes": {},
+            "stack": "Error\n    at LearnHandler.addObservation (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:223:22)\n    at LearnHandler.handleRead (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:33:12)\n    at Object.makeModuleProxy (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:384:28)\n    at Module.require (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:36:36)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:1:11)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Module.require (module.js:587:17)\n    at loadLib (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:46:30)\n    at Module.require (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:38:28)\n    at require (internal/module.js:11:18)\n    at /home/torp/development/type-regression/ci/mocha/lib/mocha.js:231:27\n    at Array.forEach (<anonymous>)\n    at Mocha.loadFiles (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:228:14)\n    at Mocha.run (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:514:10)\n    at Object.<anonymous> (/home/torp/development/type-regression/ci/mocha/bin/_mocha:480:18)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Function.Module.runMain (module.js:684:10)\n    at startup (bootstrap_node.js:187:16)\n    at bootstrap_node.js:608:3",
+            "type": "function"
+        },
+        {
+          "jsonClass": "ReadObservation",
+            "id": 2,
+            "isKnownValue": false,
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": -1,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                }
+            ],
+            "propertyTypes": {},
+            "stack": "Error\n    at LearnHandler.addObservation (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:223:22)\n    at LearnHandler.handleArgumentRead (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:76:12)\n    at Function.proxifyArguments (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:327:32)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:233:51)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:22:16)\n    at CustomProxyHandler.apply (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:229:12)\n    at Suite.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:4:5)\n    at Object.create (/home/torp/development/type-regression/ci/mocha/lib/interfaces/common.js:114:19)\n    at context.describe.context.context (/home/torp/development/type-regression/ci/mocha/lib/interfaces/bdd.js:44:27)\n    at Object.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:3:1)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Module.require (module.js:587:17)\n    at loadLib (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:46:30)\n    at Module.require (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:38:28)\n    at require (internal/module.js:11:18)\n    at /home/torp/development/type-regression/ci/mocha/lib/mocha.js:231:27\n    at Array.forEach (<anonymous>)\n    at Mocha.loadFiles (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:228:14)\n    at Mocha.run (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:514:10)\n    at Object.<anonymous> (/home/torp/development/type-regression/ci/mocha/bin/_mocha:480:18)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Function.Module.runMain (module.js:684:10)\n    at startup (bootstrap_node.js:187:16)\n    at bootstrap_node.js:608:3",
+            "type": "object"
+        },
+        {
+          "jsonClass": "ReadObservation",
+            "id": 3,
+            "isKnownValue": false,
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": -1,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 1,
+                    "jsonClass": "ArgLabel"
+                }
+            ],
+            "propertyTypes": {},
+            "stack": "Error\n    at LearnHandler.addObservation (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:223:22)\n    at LearnHandler.handleArgumentRead (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:76:12)\n    at Function.proxifyArguments (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:327:32)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:233:51)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:22:16)\n    at CustomProxyHandler.apply (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:229:12)\n    at Suite.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:4:5)\n    at Object.create (/home/torp/development/type-regression/ci/mocha/lib/interfaces/common.js:114:19)\n    at context.describe.context.context (/home/torp/development/type-regression/ci/mocha/lib/interfaces/bdd.js:44:27)\n    at Object.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:3:1)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Module.require (module.js:587:17)\n    at loadLib (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:46:30)\n    at Module.require (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:38:28)\n    at require (internal/module.js:11:18)\n    at /home/torp/development/type-regression/ci/mocha/lib/mocha.js:231:27\n    at Array.forEach (<anonymous>)\n    at Mocha.loadFiles (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:228:14)\n    at Mocha.run (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:514:10)\n    at Object.<anonymous> (/home/torp/development/type-regression/ci/mocha/bin/_mocha:480:18)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Function.Module.runMain (module.js:684:10)\n    at startup (bootstrap_node.js:187:16)\n    at bootstrap_node.js:608:3",
+            "type": "object"
+        },
+        {
+          "jsonClass": "ReadObservation",
+            "id": 4,
+            "isKnownValue": false,
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": -1,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 1,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "a"
+                }
+            ],
+            "propertyTypes": {},
+            "stack": "Error\n    at LearnHandler.addObservation (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:223:22)\n    at LearnHandler.handleRead (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:33:12)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:96:32)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:22:16)\n    at CustomProxyHandler.get (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:57:12)\n    at module.exports (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/node_modules/lib/index.js:3:10)\n    at enableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:237:63)\n    at enableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:27:16)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:237:30)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:22:16)\n    at CustomProxyHandler.apply (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:229:12)\n    at Suite.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:4:5)\n    at Object.create (/home/torp/development/type-regression/ci/mocha/lib/interfaces/common.js:114:19)\n    at context.describe.context.context (/home/torp/development/type-regression/ci/mocha/lib/interfaces/bdd.js:44:27)\n    at Object.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:3:1)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Module.require (module.js:587:17)\n    at loadLib (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:46:30)\n    at Module.require (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:38:28)\n    at require (internal/module.js:11:18)\n    at /home/torp/development/type-regression/ci/mocha/lib/mocha.js:231:27\n    at Array.forEach (<anonymous>)\n    at Mocha.loadFiles (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:228:14)\n    at Mocha.run (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:514:10)\n    at Object.<anonymous> (/home/torp/development/type-regression/ci/mocha/bin/_mocha:480:18)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Function.Module.runMain (module.js:684:10)\n    at startup (bootstrap_node.js:187:16)\n    at bootstrap_node.js:608:3",
+            "type": "undefined",
+            "value": "__UNDEFINED__"
+        },
+        {
+          "jsonClass": "ReadObservation",
+            "id": 5,
+            "isKnownValue": false,
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": -1,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "length"
+                }
+            ],
+            "propertyTypes": {},
+            "stack": "Error\n    at LearnHandler.addObservation (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:223:22)\n    at LearnHandler.handleRead (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:33:12)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:96:32)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:22:16)\n    at CustomProxyHandler.get (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:57:12)\n    at module.exports (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/node_modules/lib/index.js:5:7)\n    at enableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:237:63)\n    at enableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:27:16)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:237:30)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:22:16)\n    at CustomProxyHandler.apply (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:229:12)\n    at Suite.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:4:5)\n    at Object.create (/home/torp/development/type-regression/ci/mocha/lib/interfaces/common.js:114:19)\n    at context.describe.context.context (/home/torp/development/type-regression/ci/mocha/lib/interfaces/bdd.js:44:27)\n    at Object.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:3:1)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Module.require (module.js:587:17)\n    at loadLib (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:46:30)\n    at Module.require (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:38:28)\n    at require (internal/module.js:11:18)\n    at /home/torp/development/type-regression/ci/mocha/lib/mocha.js:231:27\n    at Array.forEach (<anonymous>)\n    at Mocha.loadFiles (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:228:14)\n    at Mocha.run (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:514:10)\n    at Object.<anonymous> (/home/torp/development/type-regression/ci/mocha/bin/_mocha:480:18)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Function.Module.runMain (module.js:684:10)\n    at startup (bootstrap_node.js:187:16)\n    at bootstrap_node.js:608:3",
+            "type": "undefined",
+            "value": "__UNDEFINED__"
+        },
+        {
+          "jsonClass": "ReadObservation",
+            "id": 6,
+            "isKnownValue": false,
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": -1,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 2
+                }
+            ],
+            "propertyTypes": {},
+            "stack": "Error\n    at LearnHandler.addObservation (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:223:22)\n    at LearnHandler.handleCall (/home/torp/development/type-regression/api-inference/API-tracer/src/learn-handler.ts:138:10)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:250:34)\n    at disableObservations (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:22:16)\n    at CustomProxyHandler.apply (/home/torp/development/type-regression/api-inference/API-tracer/src/regression-runtime-checker.ts:229:12)\n    at Suite.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:4:5)\n    at Object.create (/home/torp/development/type-regression/ci/mocha/lib/interfaces/common.js:114:19)\n    at context.describe.context.context (/home/torp/development/type-regression/ci/mocha/lib/interfaces/bdd.js:44:27)\n    at Object.<anonymous> (/home/torp/development/type-regression/api-inference/test-runner/res/sampleUndefinedVSNonExistingClient/test.js:3:1)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Module.require (module.js:587:17)\n    at loadLib (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:46:30)\n    at Module.require (/home/torp/development/type-regression/api-inference/API-tracer/src/runtime-hacks.ts:38:28)\n    at require (internal/module.js:11:18)\n    at /home/torp/development/type-regression/ci/mocha/lib/mocha.js:231:27\n    at Array.forEach (<anonymous>)\n    at Mocha.loadFiles (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:228:14)\n    at Mocha.run (/home/torp/development/type-regression/ci/mocha/lib/mocha.js:514:10)\n    at Object.<anonymous> (/home/torp/development/type-regression/ci/mocha/bin/_mocha:480:18)\n    at Module._compile (module.js:643:30)\n    at Object.Module._extensions..js (module.js:654:10)\n    at Module.load (module.js:556:32)\n    at tryModuleLoad (module.js:499:12)\n    at Function.Module._load (module.js:491:3)\n    at Function.Module.runMain (module.js:684:10)\n    at startup (bootstrap_node.js:187:16)\n    at bootstrap_node.js:608:3",
+            "type": "undefined",
+            "value": "__UNDEFINED__"
+        }
+    ],
+    "unifications": []
+}

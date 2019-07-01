@@ -1,0 +1,417 @@
+{
+    "jsonClass": "APIModel",
+    "observations": [
+        {
+            "didThrow": false,
+            "id": 1,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "function"
+        },
+        {
+            "didThrow": false,
+            "id": 2,
+            "isKnownValue": true,
+            "isNative": true,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "Symbol(__proto__)"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "function"
+        },
+        {
+            "didThrow": false,
+            "id": 3,
+            "isKnownValue": true,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "Symbol(__proto__)"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "Symbol(__proto__)"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "object"
+        },
+        {
+            "didThrow": false,
+            "id": 5,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "this"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "undefined",
+            "value": "__UNDEFINED__"
+        },
+        {
+            "didThrow": false,
+            "id": 6,
+            "isKnownValue": true,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "Symbol(__proto__)"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "object"
+        },
+        {
+            "didThrow": false,
+            "id": 7,
+            "isKnownValue": true,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "Symbol(__proto__)"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "Symbol(__proto__)"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "object"
+        },
+        {
+            "didThrow": false,
+            "id": 8,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "Array"
+        },
+        {
+            "didThrow": false,
+            "id": 9,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "length"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "number",
+            "value": 3
+        },
+        {
+            "didThrow": false,
+            "id": 10,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "AccessLabel"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "string",
+            "value": "foo"
+        },
+        {
+            "didThrow": false,
+            "id": 12,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "AccessLabel"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "string",
+            "value": "bar"
+        },
+        {
+            "didThrow": false,
+            "id": 14,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "idx": 0,
+                    "jsonClass": "ArgLabel"
+                },
+                {
+                    "jsonClass": "AccessLabel"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "string",
+            "value": "baz"
+        },
+        {
+            "didThrow": false,
+            "id": 16,
+            "isKnownValue": true,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "Symbol(__proto__)"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "object"
+        },
+        {
+            "didThrow": false,
+            "id": 17,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                }
+            ],
+            "propertyTypes": {},
+            "type": "object"
+        },
+        {
+            "didThrow": false,
+            "id": 18,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "foo"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "string",
+            "value": "foobarbaz"
+        },
+        {
+            "didThrow": false,
+            "id": 19,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "bar"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "string",
+            "value": "foobarbaz"
+        },
+        {
+            "didThrow": false,
+            "id": 20,
+            "isKnownValue": false,
+            "isNative": false,
+            "jsonClass": "ReadObservation",
+            "path": [
+                {
+                    "jsonClass": "RequireLabel",
+                    "name": "lib"
+                },
+                {
+                    "constructorCall": false,
+                    "identifier": 4,
+                    "jsonClass": "ApplicationLabel",
+                    "numArgs": 1
+                },
+                {
+                    "jsonClass": "PropertyLabel",
+                    "name": "baz"
+                }
+            ],
+            "propertyTypes": {},
+            "type": "string",
+            "value": "foobarbaz"
+        }
+    ],
+    "unifications": []
+}

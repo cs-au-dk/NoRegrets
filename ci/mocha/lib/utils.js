@@ -733,6 +733,7 @@ exports.getError = function (err) {
  * @returns {Function}
  */
 exports.stackTraceFilter = function () {
+  // TODO: Replace with `process.browser`
   var is = typeof document === 'undefined' ? { node: true } : { browser: true };
   var slash = path.sep;
   var cwd;

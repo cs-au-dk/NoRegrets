@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-content>
+        <h2>Configuration</h2>
+        <section>
+            <mat-checkbox [(ngModel)]="hidePrototypes">
+                Hide prototypes actions in paths
+            </mat-checkbox>
+            <br>
+            <mat-checkbox [(ngModel)]="hideClientCoverage">
+                Hide the coverage information for individual clients
+            </mat-checkbox>
+        </section>
+    </mat-card-content>
+</mat-card>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let benchmarkInfo of (analysisResults$ | async).slice(1)">
+        <mat-expansion-panel-header>
+            <mat-panel-title *ngIf="containsTypeRegressions(benchmarkInfo); else elseBlock">
+                <p style="color: red">{{benchmarkInfo.key}}</p>
+            </mat-panel-title>
+            <ng-template #elseBlock>
+                <p style="color: black">{{benchmarkInfo.key}}</p>
+            </ng-template>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+            <app-analysis-results [analysisResults]="benchmarkInfo"
+                                  [initVersionInfo]="resolvedInitVersionInfo"
+                                  [fseStylePaths]="NoRegretsPlusBenchmark"
+                                  [hidePrototypes]="hidePrototypes"
+                                  [hideClientCoverage]="hideClientCoverage"
+                                  [toolName]="getToolName()">
+            </app-analysis-results>
+        </ng-template>
+    </mat-expansion-panel>
+</mat-accordion>
+

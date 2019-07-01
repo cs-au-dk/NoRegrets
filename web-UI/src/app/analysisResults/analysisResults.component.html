@@ -1,0 +1,95 @@
+<h3>Client Details</h3>
+<table style="border-collapse: collapse; border: 1px solid black">
+    <tr>
+        <th class="padding">Client</th>
+        <th class="padding">{{toolName}} execution time</th>
+        <th class="padding">Model size (paths)</th>
+        <th class="padding">Compressed model size</th>
+        <th class="padding">Statement coverage</th>
+        <!-- <th class="padding">Paths total</th> -->
+        <!-- <th class="padding">Paths covered</th> -->
+        <th class="padding">{{clientModelSizeString()}}</th>
+    </tr>
+    <tr *ngFor="let clientDetail of sortedClientDetails(analysisResults.value.clientDetails)">
+        <td class="padding">
+            <div *ngIf="clientDetail.succeeded; else elseBlock">
+                {{clientDetail.packageAtVersion}} -
+            </div>
+            <ng-template #elseBlock>
+                <div *ngIf="didFailInitially(clientDetail.packageAtVersion); else elseBlock2">
+                    <a style="color: red"
+                       popoverTitle="Cause of client crash:"
+                       placement="left"
+                       ngbPopover="{{clientDetail.error}}">{{clientDetail.packageAtVersion}}</a>
+                </div>
+                <ng-template #elseBlock2>
+                    <a style="color: blue"
+                       popoverTitle="Cause of client crash (did not fail on initial version):"
+                       placement="left"
+                       ngbPopover="{{clientDetail.error}}">{{clientDetail.packageAtVersion}}</a>
+                </ng-template>
+            </ng-template>
+        </td>
+        <td class="padding">
+            {{getTime(clientDetail) / 1000}}sec
+        </td>
+        <td class="padding">
+            {{clientDetail.modelSize}}
+        </td>
+        <td class="padding">
+            {{clientDetail.compressedModelSize}} ({{compressedFraction(clientDetail)}})
+        </td>
+        <td *ngIf="!hideClientCoverage; else elseCoverageBlock" class="padding">
+            {{clientDetail.htmlStatementCoverage()}}
+        </td>
+        <ng-template #elseCoverageBlock>
+           <td></td>
+        </ng-template>
+        <!-- <td class="padding"> -->
+        <!--     {{clientDetail.pathsTotal}} -->
+        <!-- </td> -->
+        <!-- <td class="padding"> -->
+        <!--     {{clientDetail.pathsCovered}} -->
+        <!-- </td> -->
+        <td class="padding">
+            {{clientDetail.clientOrModelSizeBytes / 1000}}kB
+        </td>
+    </tr>
+    <tr [innerHtml]="visualizeAverageClientDetail(analysisResults.value.clientDetails)">
+
+    </tr>
+    <tr [innerHtml]="visualizeTotalClientDetail(analysisResults.value.clientDetails)">
+
+    </tr>
+</table>
+
+<h3>Coverage information</h3>
+<div *ngIf="analysisResults.value.coverageObject.hasStatementCoverage(); else coverageElse">
+    <ul [innerHTML]="analysisResults.value.htmlStatementCoverage()">
+
+    </ul>
+    <b>Statement coverage total: {{analysisResults.value.statementsTotal()}}</b>
+</div>
+<ng-template #coverageElse>
+    Coverage information not available for this benchmark
+</ng-template>
+
+<h3>Type regressions</h3>
+<table *ngIf="analysisResults.value.regressionInfo.regressions.length > 0; else regressionElse" class="table table-striped">
+    <thead>
+    <tr>
+        <th>Path</th>
+        <th>Type relation failure</th>
+        <th>Clients involved</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let regression of selectedRegressions(analysisResults.value.regressionInfo.regressions); index as i">
+        <td><p [innerHtml]="pathStrs[i]"></p></td>
+        <td><p [innerHtml]="visualizeRegression(regression[1])"></p></td>
+        <td><p [innerHtml]="visualizeClient(regression[1])"></p></td>
+
+    </tr>
+</table>
+<ng-template #regressionElse>
+    No type regressions were found in {{analysisResults.key}}
+</ng-template>

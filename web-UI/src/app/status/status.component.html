@@ -1,0 +1,34 @@
+<mat-accordion>
+	<mat-expansion-panel *ngFor="let benchmark of (status | async)">
+		<mat-expansion-panel-header>
+			<mat-panel-title>
+				{{benchmark.key}}
+			</mat-panel-title>
+		</mat-expansion-panel-header>
+		<table class="table">
+			<thead>
+			<tr>
+				<th>Tool</th>
+                <th>Major updates</th>
+				<th>Minor/patch updates</th>
+				<th>With Coverage</th>
+				<th>With Unconstrained clients</th>
+				<th>Type regressions</th>
+				<th>Total clients</th>
+			</tr>
+			</thead>
+			<tr *ngFor="let dk of benchmark.value; let i = index" (click)="toggleRow(benchmark.key, i)" [className]="toggledRows[benchmark.key][i] && 'selected'">
+				<td><a [routerLink]="['/diffs', dk.key]" target="_blank">{{dk.tool}}</a></td>
+				<td>{{dk.majorUpdates}}</td>
+				<td>{{dk.minorPatchUpdates}}</td>
+				<td>{{dk.withCoverage}}</td>
+				<td>{{dk.withIgnoreTags}}</td>
+				<td>{{dk.pathCountInDiff}}</td>
+				<td>{{dk.totalClientCount}}</td>
+			</tr>
+		</table>
+        <button class="btn btn-primary" (click)="compare(benchmark.key)">
+			Compare
+		</button>
+	</mat-expansion-panel>
+</mat-accordion>
